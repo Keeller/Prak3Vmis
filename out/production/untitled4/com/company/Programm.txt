@@ -1,0 +1,19 @@
+xor eax eax eax
+mov ecx %4
+mov ebx 6
+go:
+mov esi eax
+add esi esi %1
+add edx %6 esi
+cmp [edx] ebx
+jg update:
+inc eax
+loop go:
+jmp enp:
+update:
+mov edx %6
+add edx edx esi
+mov ebx [edx]
+inc eax
+loop go:
+enp:
